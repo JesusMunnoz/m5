@@ -33,7 +33,6 @@ async function main()
         console.log(result);*/
 
         let deleteDate = "DELETE FROM marks WHERE date < DATE_SUB(CURDATE(), INTERVAL 10 YEAR)"; 
-        // latabla se llama borrar, que nos hemos creado previamente en sql
         let [deleteResult] = await connection.query(deleteDate);
         console.log("notas borrada");
         console.log(deleteResult);
