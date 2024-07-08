@@ -2,10 +2,11 @@ const { Router } = require('express');
 const router = Router();
 const usersCtrl = require("../controller/user.controller")
 
-router.get('/alumnos', usersCtrl.getAllAlumnos);
-router.get('/alumnos/:id', usersCtrl.getAlumnoById);
-router.post('/alumnos', usersCtrl.addAlumno);
-router.put('/alumnos', usersCtrl.updateAlumno);
-router.delete('/alumnos', usersCtrl.deleteAlumno);
+
+router.get('/media/:id', usersCtrl.getMedia); 
+router.get('/apuntadas', usersCtrl.getAllApuntadas); 
+router.get('/apuntadas/:id', usersCtrl.getApuntadasById); 
+router.get('/impartidas', usersCtrl.getAllImpartidas);
+router.get('/impartidas/:id', usersCtrl.getImpartidasById); 
 
 module.exports = router;
