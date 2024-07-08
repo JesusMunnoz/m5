@@ -49,9 +49,11 @@ const updateAlumno = async (req, res) => {
 const deleteAlumno = async (req, res) => {
   const id = req.body.id_students;
   try {
+    await pool.query('DELETE FROM marks where student_id = ?', [id]);
+    
     const [result] = await pool.query('DELETE FROM students WHERE id_students = ?', [id]);
     if (result.affectedRows === 0) {
-      return res.status(404).json({ message: 'No encontramos alumno' });
+      return res.status(404).json({ message: 'No encontramos  alumno' });
     }
     res.json({ message: 'alumno eliminado' });
   } catch (error) {

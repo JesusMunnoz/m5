@@ -12,9 +12,8 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(userRouter);
 
-app.use(function (req, res, next)
-{
-    res.status(404).json({message: "Endpoint doesnt found"});
+app.use(function (req, res, next) {
+    res.status(404).json({ message: "Endpoint doesnt found" });
 });
 
 app.use (errorHandling);
